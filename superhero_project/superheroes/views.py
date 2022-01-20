@@ -33,3 +33,11 @@ def create(request):
 
     else:
         return render(request, "superheroes/create.html")
+
+def edit(request, hero_id):
+    single_hero = Superhero.objects.get(pk=hero_id)
+    context = {
+        'single_hero': single_hero
+    }
+    create()
+    
